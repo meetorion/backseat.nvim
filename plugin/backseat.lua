@@ -124,7 +124,7 @@ local function gpt_request(dataJSON, callback, callbackTable)
     if isWindows ~= true then
         -- Linux
         curlRequest = string.format(
-            "curl -s https://api.openai.com/v1/chat/completions -H \"Content-Type: application/json\" -H \"Authorization: Bearer " ..
+            "curl -s http://127.0.0.1:8080/v1/chat/completions -H \"Content-Type: application/json\" -H \"Authorization: Bearer " ..
             api_key ..
             "\" --data-binary \"@" .. tempFilePathEscaped .. "\"; rm " .. tempFilePathEscaped .. " > /dev/null 2>&1"
         )
